@@ -1,0 +1,25 @@
+<% include partials/header %>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <% include partials/nav %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h1><%= title %></h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <form action="" method="POST">
+                        <div class="form-group">
+                            <label for='author'>Update form goes here</label>
+                            <button type="submit" class='btn btn-primary btn-sm'>Update quote</button>
+                        </div>
+                    </form>
+                    <a href="/quotes" class="btn btn-primary btn-sm" title="Go Back">Go Back</a>
+                </div>
+            </div>
+        </div>
+<% include partials/footer %>
