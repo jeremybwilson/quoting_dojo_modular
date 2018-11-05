@@ -1,0 +1,29 @@
+<% include partials/header %>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <% include partials/nav %>
+                    <h3>View Individual Quotes</h3>
+                    <% if(quotes){ %>
+                    <div class="row">
+                        <div class="col">
+                            <ul>
+                                <h3>"<%= quote.quote %>"</h3>
+                                <p>- <%= quote.author %> at <%= quote.date %> | <a href="/quotes/delete/<%= quote._id%>">Delete quote</a></p>
+                                <hr />
+                            </ul>
+                        </div>
+                    </div>
+                    <% } else { %>
+                    <div class="errors">
+                        <% if(messages.create_error) { %>
+                            <% for (const key of messages.create_error) { %>
+                                <p><%= key %></p>
+                            <% } %>
+                        <% } %>
+                    </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+<% include partials/footer %>
