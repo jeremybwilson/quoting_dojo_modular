@@ -65,8 +65,7 @@ module.exports = {
             });
     },
 
-    // view(request, response){ },
-
+    // edit (get) quote route
     edit(request, response){
         const which = request.params._id;
         Quote.findById({_id:which})
@@ -81,6 +80,7 @@ module.exports = {
         })
     },
 
+    // update (post) quote route
     update(request, response){
         const which = request.params._id;
         Quote.findByIdAndUpdate(which, request.body)
@@ -94,6 +94,7 @@ module.exports = {
         })
     },
 
+    // delete quote route
     destroy(request, response){
         const which = request.params._id;
         Quote.remove({_id:which})
@@ -101,7 +102,9 @@ module.exports = {
                 console.log('deleted successfully')
                 response.redirect('/');
             })
-            .catch((error) => console.log(error));
+            .catch((error) => {
+                console.log(error)
                 response.redirect('/');
+            });
     }
 };

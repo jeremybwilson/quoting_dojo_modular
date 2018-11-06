@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 // Create a schema for Users (UserSchema)
-const QuoteSchema = new mongoose.Schema({
+const QuoteSchema = new Schema({
     author: { 
         type: String, 
         required: [true, 'A name is required'], 
@@ -20,6 +20,4 @@ const QuoteSchema = new mongoose.Schema({
     }
 });
 
-// mongoose.model('Quote', QuoteSchema); // We are setting this Schema in our Models as 'Quote'
-// const Quote = mongoose.model('Quote'); // We are retrieving this Schema from our Models, named 'Quote'
-module.exports = mongoose.model('Quote', 'QuoteSchema');
+module.exports = mongoose.model('Quote', QuoteSchema);

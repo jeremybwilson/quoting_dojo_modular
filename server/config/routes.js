@@ -1,9 +1,9 @@
-// const mongoose = require('mongoose'),
-//       Quote = mongoose.model('Quote')
 const QuoteController = require('../controllers/quotes');
 
 module.exports = function(app){
     // routing
+    console.log('inside the routes file');
+
     app.get('/', QuoteController.index);
     app.get('/quotes', QuoteController.new);
     // Add New Quote Request 
